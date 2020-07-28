@@ -1,14 +1,66 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
+//importacion de Components
+
+import Stateful from "./components/Stateful";
+import Stateless from "./components/Stateless";
+import HolaMundo from "./components/HolaMundo";
+import Button from "./components/Button";
+import Tienda from "./components/Tienda";
+import PropTypes from "./components/PropTypes";
+import Frutas from "./components/Frutas";
+import CicloDeVida from "./components/CicloDeVida";
+import PropChildren from "./components/PropChildren";
+import ManejoDeEstado from "./components/ManejoDeEstado";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    ----Stateful----
+    <br />
+    <Stateful />
+    <br />
+    ----Stateless----
+    <br />
+    <Stateless />
+    <br />
+    ------JSX------
+    <br />
+    <HolaMundo />
+    <br />
+    ----Props-----
+    <br />
+    <Button text="Hola soy un prop"/>
+   
+    <br />
+    -----Prop Children------
+    <br />
+    <PropChildren />
+    <br/>
+    ------PropTypes------
+    <br />
+    <PropTypes />
+    <br />
+    ---Manejo de estados y eventos---
+    <br />
+    <ManejoDeEstado />
+    <br />
+    ------Fragments------
+    <Tienda />
+    <br />
+    
+    ---------Iteración de listas--------
+    <br />
+    <Frutas />
+    <br />
+    ---------Ciclo de vida---------
+    <br />
+    <CicloDeVida />
+    <br />
+   
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
