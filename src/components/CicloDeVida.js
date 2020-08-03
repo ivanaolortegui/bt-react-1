@@ -1,48 +1,56 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
-class CicloDeVida extends Component {
-  constructor(props) {
-    super(props);
-    console.log("constructor");
-    this.state = { data: [{ nombre: this.props.color }] };
+ class CicloDeVida extends Component {
+  constructor() {
+    super();
+    console.log("Constructor");
+    this.state = {
+      nombre: "",
+    };
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate");
+    console.log({ prevProps: prevProps, prevState: prevState });
+  }
+  componentDidMount() {
+    console.log("componentDidMount");
+    this.setTimeoutId = setTimeout(() => this.setState({ nombre: "Ivana" }), 3000);
   }
 
-  componentDidMount = () => {
-    console.log("componentDidMount");
-    this.setTimeoutId = setTimeout(
-      () =>
-        this.setState({
-          data: [{ nombre: "Ivana" }],
-        }),
-      3000
-    );
-  };
-
-  componentDidUpdate = (prevProps, prevState) => {
-    console.log("componentDidUpdate");
-    console.log({ preProps: prevProps, prevState: prevState });
-    console.log(prevState);
-    console.log({ state: this.state });
+  onData = () => {
+    this.setState({ nombre: "Olortegui" });
   };
   componentWillUnmount() {
-    clearTimeout(this.setTimeoutId);
+    console.log("componentWillUnmount");
+    clearTimeout(this.setTimeoutId)
   }
-  onsetData = () => {
-    console.log("click");
-    console.log(this.setTimeoutId);
-    this.setState((state) => ({
-      data: [{ nombre: "flac" }],
-    }));
-  };
   render() {
-    console.log("render");
+    console.log("Render");
     return (
       <div>
-        <h1>{this.state.data[0].nombre}</h1>
-        <p>Ciclo de Vida</p>
+       <p>{this.state.nombre}</p> 
+        <button onClick={this.onData}>Actualizar</button>
       </div>
     );
   }
 }
 
-export default CicloDeVida;
+export default class OcultarComponente extends React.Component {
+  state = {
+    mostrar: true,
+  };
+
+  ocultar = () => {
+    this.setState({ mostrar: false });
+  };
+  render() {
+      return(
+        <Fragment>
+        {this.state.mostrar && <CicloDeVida/>}
+        <br/>
+        <button onClick={this.ocultar}>Ocultar</button>
+      </Fragment>
+      )
+   
+  }
+}

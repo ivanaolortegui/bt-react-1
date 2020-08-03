@@ -9,11 +9,11 @@ import Stateless from "./components/Stateless";
 import HolaMundo from "./components/HolaMundo";
 import Button from "./components/Button";
 import Tienda from "./components/Tienda";
-import PropTypes from "./components/PropTypes";
+import PropType from "./components/PropType";
 import Frutas from "./components/Frutas";
-import CicloDeVida from "./components/CicloDeVida";
 import PropChildren from "./components/PropChildren";
 import ManejoDeEstado from "./components/ManejoDeEstado";
+import OcultarComponente from "./components/CicloDeVida";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -40,7 +40,7 @@ ReactDOM.render(
     <br/>
     ------PropTypes------
     <br />
-    <PropTypes />
+    <PropType /> 
     <br />
     ---Manejo de estados y eventos---
     <br />
@@ -56,7 +56,7 @@ ReactDOM.render(
     <br />
     ---------Ciclo de vida---------
     <br />
-    <CicloDeVida />
+    <OcultarComponente/>
     <br />
    
   </React.StrictMode>,

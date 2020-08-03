@@ -1,8 +1,8 @@
 import React from "react";
 
-const Stateles = () => {
+const Stateless = () => {
   const text = "Hola Grupo de Conocimiento";
   return <h2>{text}</h2>;
 };
 
-export default Stateles;
+export default Stateless;
